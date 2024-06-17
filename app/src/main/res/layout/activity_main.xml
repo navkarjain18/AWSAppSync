@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/holder_list_screen"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_64sdp"
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:elevation="@dimen/_0sdp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_0sdp"
+            app:contentPadding="@dimen/_0sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/holder_mutation"
+            app:rippleColor="@color/transparent"
+            app:strokeColor="@color/brand_accent_secondary"
+            app:strokeWidth="1dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Go To Get List Screen"
+                android:textAppearance="@style/BodyBaselinePlus"
+                android:textColor="@color/brand_accent_secondary" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/holder_mutation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_64sdp"
+            app:layout_constraintTop_toBottomOf="@id/holder_list_screen"
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:elevation="@dimen/_0sdp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_0sdp"
+            app:contentPadding="@dimen/_0sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/holder_clear_cache"
+            app:rippleColor="@color/transparent"
+            app:strokeColor="@color/brand_accent_secondary"
+            app:strokeWidth="1dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Add to TODO List"
+                android:textAppearance="@style/BodyBaselinePlus"
+                android:textColor="@color/brand_accent_secondary" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/holder_clear_cache"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_64sdp"
+            app:layout_constraintTop_toBottomOf="@id/holder_mutation"
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:elevation="@dimen/_0sdp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_0sdp"
+            app:contentPadding="@dimen/_0sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:rippleColor="@color/transparent"
+            app:strokeColor="@color/brand_accent_secondary"
+            app:strokeWidth="1dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Clear Cache"
+                android:textAppearance="@style/BodyBaselinePlus"
+                android:textColor="@color/brand_accent_secondary" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,54 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+//plugins {
+//    alias(libs.plugins.android.application) apply false
+//    alias(libs.plugins.jetbrains.kotlin.android) apply false
+//    alias(libs.plugins.apollo) apply false
+//    alias(libs.plugins.aws.appsync) apply false
+//}
+
+buildscript {
+
+    ext.kotlin_version = "1.9.0"
+
+    repositories {
+//        maven{url "https://repo.maven.apache.org/maven2/"}
+//        maven { url "https://nodejs.org/dist/v20.10.0/node-v20.10.0-linux-x64.tar.gz" }
+
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.4.1'
+//        classpath 'com.google.gms:google-services:4.3.15'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0'
+
+//        classpath("com.moowork.gradle:gradle-node-plugin:1.2.0")
+
+        classpath "com.amazonaws:aws-android-sdk-appsync-gradle-plugin:3.4.1"
+
+//        classpath 'com.apollographql.apollo:apollo-gradle-plugin:2.5.13'
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.50'
+
+        // Add the dependency for the Crashlytics Gradle plugin
+//        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.9'
+
+    }
+}
+
+allprojects {
+    repositories {
+        // Add this maven block.
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

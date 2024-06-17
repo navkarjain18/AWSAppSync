@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2023 DigiValet
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:cardBackgroundColor="@color/brand_glass_one"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_12sdp"
+        app:rippleColor="@android:color/transparent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/system_content_white"
+            android:padding="@dimen/_12sdp">
+
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/BodySmallTitlePlus"
+                android:textColor="@color/system_content_dark"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toTopOf="@id/tv_sub_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+
+            <TextView
+                android:id="@+id/tv_sub_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/SmallFootnote"
+                android:textColor="@color/system_content_dark"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_goneMarginStart="@dimen/_0sdp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

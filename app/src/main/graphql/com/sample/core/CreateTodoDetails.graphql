@@ -1,0 +1,19 @@
+#mutation CreateTodoDetails($id: String , $name: String , $description: String) {
+#    createTodo(input: {description: $description, id: $id, name: $name}) {
+#        createdAt
+#        description
+#        id
+#        name
+#        updatedAt
+#    }
+#}
+
+mutation CreateTodo($input: CreateTodoInput!) {
+    createTodo(input: $input) {
+        id
+        name
+        description
+        createdAt
+        updatedAt
+    }
+}

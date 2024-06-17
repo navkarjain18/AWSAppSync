@@ -1,0 +1,12 @@
+query GetTodoDetailsList {
+    listTodos {
+        items {
+            id
+            name
+            description
+            createdAt
+            updatedAt
+        }
+        nextToken
+    }
+}

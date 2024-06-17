@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="addTodoVM"
+            type="com.example.awsappsyncsampleapp.ui.activities.addtodo.AddTodoViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_id"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_60sdp"
+            android:background="@null"
+            android:cursorVisible="true"
+            android:hint="Type your id"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/holder_add"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_64sdp"
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:elevation="@dimen/_0sdp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_0sdp"
+            app:contentPadding="@dimen/_0sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_id"
+            app:rippleColor="@color/transparent"
+            app:strokeColor="@color/brand_accent_secondary"
+            app:strokeWidth="1dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Add Id to list"
+                android:textAppearance="@style/BodyBaselinePlus"
+                android:textColor="@color/brand_accent_secondary" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,9 @@
+query GetTodoDetails($id: ID!) {
+    getTodo(id: $id) {
+        createdAt
+        description
+        id
+        name
+        updatedAt
+    }
+}

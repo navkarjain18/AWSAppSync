@@ -1,0 +1,92 @@
+//plugins {
+//    alias(libs.plugins.android.application)
+//    alias(libs.plugins.jetbrains.kotlin.android)
+//    alias(libs.plugins.apollo)
+//    alias(libs.plugins.aws.appsync)
+//
+//}
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.amazonaws.appsync'
+    id 'com.google.dagger.hilt.android'
+//    id("com.apollographql.apollo3").version("3.8.2")
+
+}
+
+android {
+    namespace 'com.example.awsappsyncsampleapp'
+    compileSdk 34
+
+
+    defaultConfig {
+        applicationId "com.example.awsappsyncsampleapp"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+//    apollo {
+//        sourceFolder.set("com/sample/core")
+//        packageName.set("com.sample.core")
+//        generateKotlinModels.set(true) // or false for Java models
+//    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+        freeCompilerArgs += ["-Xjvm-default=all",]
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+
+    /*graphql client*/
+//    implementation libs.apollo.runtime
+
+    implementation libs.gson
+
+    implementation libs.aws.android.sdk.appsync
+
+    /*lifecycle component*/
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+
+    /*kotlin coroutines*/
+    implementation libs.kotlinx.coroutines.core
+    implementation libs.kotlinx.coroutines.android
+    implementation libs.kotlinx.coroutines.play.services
+
+    /*hilt*/
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
+
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+}

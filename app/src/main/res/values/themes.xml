@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AwsAppSyncSampleApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/bar_tab_bar</item>
+        <item name="colorPrimaryDark">@color/bar_semi_transparent</item>
+        <item name="colorAccent">@color/brand_accent_primary</item>
+        <item name="android:statusBarColor">@color/system_content_dark</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowBackground">@color/system_content_white</item>
+        <item name="cardViewStyle">@style/CardView.Light</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

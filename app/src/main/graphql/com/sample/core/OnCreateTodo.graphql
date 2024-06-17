@@ -1,0 +1,9 @@
+subscription OnCreateTodo {
+    onCreateTodo {
+        id
+        name
+        description
+        createdAt
+        updatedAt
+    }
+}
