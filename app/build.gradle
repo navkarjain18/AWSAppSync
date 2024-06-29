@@ -17,12 +17,12 @@ plugins {
 }
 
 android {
-    namespace 'com.example.awsappsyncsampleapp'
+    namespace 'com.appsyncsample'
     compileSdk 34
 
 
     defaultConfig {
-        applicationId "com.example.awsappsyncsampleapp"
+        applicationId "com.appsyncsample"
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -57,7 +57,25 @@ android {
         dataBinding true
         viewBinding true
     }
+
+    apollo {
+        // instruct the compiler to generate Kotlin models
+
+//        generateKotlinModels.set(true)
+    }
 }
+
+//appsync {
+//    // ... other AppSync configurations
+//    targetLanguage 'kotlin' // Set the target language to Kotlin
+//}
+
+//    appsync {
+//        // ... other configurations
+//        codegen {
+//            generateKotlinModels = true // Enable Kotlin model generation
+//        }
+//    }
 
 dependencies {
 

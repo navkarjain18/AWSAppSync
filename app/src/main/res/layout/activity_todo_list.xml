@@ -7,7 +7,7 @@
 
         <variable
             name="todoListVM"
-            type="com.example.awsappsyncsampleapp.ui.activities.todoList.TodoListViewModel" />
+            type="com.appsyncsample.ui.activities.todoList.TodoListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

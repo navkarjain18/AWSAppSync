@@ -22,5 +22,5 @@ pluginManagement {
 //    }
 //}
 
-rootProject.name = "AwsAppSyncSampleApp"
+rootProject.name = "AppSyncSample"
 include ':app'

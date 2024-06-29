@@ -6,7 +6,7 @@
 
         <variable
             name="addTodoVM"
-            type="com.example.awsappsyncsampleapp.ui.activities.addtodo.AddTodoViewModel" />
+            type="com.appsyncsample.ui.activities.addtodo.AddTodoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
