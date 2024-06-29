@@ -3,11 +3,11 @@ package com.appsyncsample.ui.activities.todoList
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.appsyncsample.BR
+import com.appsyncsample.GetTodoDetailsListQuery
 import com.appsyncsample.R
 import com.appsyncsample.databinding.ActivityTodoListBinding
 import com.appsyncsample.ui.adapters.TodoListItemsAdapter
 import com.appsyncsample.ui.base.BaseActivity
-import com.sample.core.GetTodoDetailsListQuery
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -46,7 +46,6 @@ class TodoListActivity : BaseActivity<ActivityTodoListBinding, TodoListViewModel
 
 
         viewModel.subscribeTodoDetails { todo ->
-//            if (todoListItemsAdapter.todoList.none() { it.id() == todo?.id() })
             val todoItem = GetTodoDetailsListQuery.Item(
                 "",
                 todo?.id().toString(),
@@ -60,9 +59,7 @@ class TodoListActivity : BaseActivity<ActivityTodoListBinding, TodoListViewModel
         }
     }
 
-    private fun initViews() {
-
-    }
+    private fun initViews() {}
 
 
 }

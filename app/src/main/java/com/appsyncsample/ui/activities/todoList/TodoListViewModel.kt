@@ -1,11 +1,10 @@
 package com.appsyncsample.ui.activities.todoList
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.appsyncsample.GetTodoDetailsListQuery
+import com.appsyncsample.OnCreateTodoSubscription
 import com.appsyncsample.remote.CoreRepository
-import com.sample.core.GetTodoDetailsListQuery
-import com.sample.core.OnCreateTodoSubscription
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -20,7 +19,7 @@ class TodoListViewModel @Inject constructor() : ViewModel() {
             coreRepository.getTodoDetailsList(onResponse = {
                 onResponse(it)
             }, onFailure = {
-                Log.e("TAG" , "${it.message}")
+
             })
         }
     }

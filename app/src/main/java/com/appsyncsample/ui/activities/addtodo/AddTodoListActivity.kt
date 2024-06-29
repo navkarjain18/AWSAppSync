@@ -32,7 +32,7 @@ class AddTodoListActivity : BaseActivity<ActivityAddTodoListBinding, AddTodoView
 
     private fun init() {
         viewDataBinding.holderAdd.setOnClickListener {
-            viewModel.createTodo(viewDataBinding.etId.text.toString()) {
+            viewModel.addTodo(viewDataBinding.etId.text.toString()) {
                 viewDataBinding.etId.setText("")
             }
         }

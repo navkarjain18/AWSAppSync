@@ -16,6 +16,7 @@
 
 package com.appsyncsample.remote
 
+import android.util.Log
 import com.amazonaws.mobileconnectors.appsync.AWSAppSyncClient
 import com.amazonaws.mobileconnectors.appsync.AppSyncSubscriptionCall
 import com.amazonaws.mobileconnectors.appsync.ClearCacheOptions
@@ -23,12 +24,12 @@ import com.amazonaws.mobileconnectors.appsync.fetcher.AppSyncResponseFetchers
 import com.apollographql.apollo.GraphQLCall
 import com.apollographql.apollo.api.Response
 import com.apollographql.apollo.exception.ApolloException
+import com.appsyncsample.CreateTodoMutation
+import com.appsyncsample.GetTodoDetailsListQuery
+import com.appsyncsample.GetTodoDetailsQuery
+import com.appsyncsample.OnCreateTodoSubscription
 import com.appsyncsample.network.AwsClientInstance
-import com.sample.core.CreateTodoMutation
-import com.sample.core.GetTodoDetailsListQuery
-import com.sample.core.GetTodoDetailsQuery
-import com.sample.core.OnCreateTodoSubscription
-import com.sample.core.type.CreateTodoInput
+import com.appsyncsample.type.CreateTodoInput
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -39,6 +40,9 @@ class CoreRepository {
     private var awsClient: AWSAppSyncClient = AwsClientInstance.getInstance()
 
 
+    /*
+    * Get List of TodoDetails
+    * */
     fun getTodoDetailsList(
         onResponse: (List<GetTodoDetailsListQuery.Item>?) -> Unit,
         onFailure: (ApolloException) -> Unit
@@ -56,12 +60,16 @@ class CoreRepository {
 
                 override fun onFailure(e: ApolloException) {
                     onFailure(e)
+                    Log.e("TAG" , "${e.message}")
                 }
 
             })
     }
 
 
+    /*
+    * Get TodoDetails of particular id
+    * */
     fun getTodoDetails(
         id: String,
         onResponse: (GetTodoDetailsQuery.GetTodo?) -> Unit,
@@ -77,12 +85,16 @@ class CoreRepository {
 
                 override fun onFailure(e: ApolloException) {
                     onFailure(e)
+                    Log.e("TAG" , "${e.message}")
                 }
 
             })
     }
 
-    fun createTodo(
+    /*
+    * Add TodoDetails to list
+    * */
+    fun addTodo(
         createTodoInput: CreateTodoInput,
         onResponse: (Response<CreateTodoMutation.Data>) -> Unit,
         onFailure: (ApolloException) -> Unit
@@ -97,11 +109,15 @@ class CoreRepository {
 
             override fun onFailure(e: ApolloException) {
                 onFailure(e)
+                Log.e("TAG" , "${e.message}")
             }
 
         })
     }
 
+    /*
+    * Subscribe to TodoDetails
+    * */
     fun subscribeTodoDetails(
         onResponse: (OnCreateTodoSubscription.OnCreateTodo?) -> Unit,
         onFailure: (ApolloException) -> Unit,
@@ -118,6 +134,7 @@ class CoreRepository {
 
             override fun onFailure(e: ApolloException) {
                 onFailure(e)
+                Log.e("TAG" , "${e.message}")
             }
 
             override fun onCompleted() {
@@ -127,6 +144,9 @@ class CoreRepository {
         })
     }
 
+    /*
+    * Clear Cache
+    * */
     fun clearCache() {
         awsClient.clearCaches(
             ClearCacheOptions.builder().clearQueries().build()

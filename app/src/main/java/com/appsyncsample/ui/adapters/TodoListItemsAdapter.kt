@@ -20,10 +20,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.appsyncsample.GetTodoDetailsListQuery
 import com.appsyncsample.R
 import com.appsyncsample.databinding.RowTodoListItemBinding
 import com.appsyncsample.utils.listeners.OnViewClickListener
-import com.sample.core.GetTodoDetailsListQuery
 import javax.inject.Inject
 
 class TodoListItemsAdapter @Inject constructor() :
